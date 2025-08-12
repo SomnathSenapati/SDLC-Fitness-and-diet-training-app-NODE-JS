@@ -36,7 +36,7 @@ const router = express.Router();
  *              type: string
 *     responses:
 *        200:
-*          description: student data added
+*          description: Success
 *        400:
 *          description: Bad Request
 *        500:
