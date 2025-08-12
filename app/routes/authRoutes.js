@@ -44,10 +44,59 @@ const router = express.Router();
 */
 router.post("/signup", signup);
 
+
+
 // Email verification
+/**
+ * @swagger
+ * /api/auth/verify:
+ *  get:
+ *    summary: Email verification successfull
+ *    tags:
+ *       - Auth
+ *    produces:
+ *      - application/json
+ *    responses:
+ *      '200':
+ *        description: Email verification successfully.
+ */
 router.get("/verify", verifyEmail);
 
+
+
+
 // Login
+/**
+* @swagger
+* /api/auth/login:
+*   post:
+*     summary: Login Success
+*     tags:
+*       - Auth
+*     produces:
+*       - application/json
+*     parameters:
+ *      - in: body
+ *        name: Login
+ *        description: Login Successfull.
+ *        schema:
+ *          type: object
+ *          required:
+ *            - email
+ *            - password
+ *          properties:
+ *            email:
+ *              type: string
+ *            password:
+ *              type: string
+*     responses:
+*        200:
+*          description: Success
+*        400:
+*          description: Bad Request
+*        500:
+*          description: Server Error
+*/
 router.post("/login", login);
 
 module.exports = router;
